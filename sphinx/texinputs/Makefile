@@ -51,12 +51,12 @@ bz2: tar
 	latex $(LATEXOPTS) '$<'
 
 %.pdf: %.tex
-	pdflatex $(LATEXOPTS) '$<'
-	pdflatex $(LATEXOPTS) '$<'
-	pdflatex $(LATEXOPTS) '$<'
+	xelatex $(LATEXOPTS) '$<'
+	xelatex $(LATEXOPTS) '$<'
+	xelatex $(LATEXOPTS) '$<'
 	-makeindex -s python.ist '$(basename $<).idx'
-	pdflatex $(LATEXOPTS) '$<'
-	pdflatex $(LATEXOPTS) '$<'
+	xelatex $(LATEXOPTS) '$<'
+	xelatex $(LATEXOPTS) '$<'
 
 clean:
 	rm -f *.dvi *.log *.ind *.aux *.toc *.syn *.idx *.out *.ilg *.pla
